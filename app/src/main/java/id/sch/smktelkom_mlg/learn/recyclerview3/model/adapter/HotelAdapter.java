@@ -15,11 +15,11 @@ import id.sch.smktelkom_mlg.learn.recyclerview3.R;
 import id.sch.smktelkom_mlg.learn.recyclerview3.model.Hotel;
 
 /**
- * Created by Microsoft on 03/11/2016.
+ * Created by Me on 11/8/2016.
  */
 
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> {
-    private final ArrayList<Hotel> hotelList;
+    ArrayList<Hotel> hotelList;
     IHotelAdapter mIHotelAdapter;
 
     public HotelAdapter(Context context, ArrayList<Hotel> hotelList) {
@@ -29,8 +29,8 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
-        ViewHolder vh = new ViewHolder(view);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
+        ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
@@ -63,6 +63,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
             ivFoto = (ImageView) itemView.findViewById(R.id.imageView);
             tvJudul = (TextView) itemView.findViewById(R.id.textViewJudul);
             tvDeskripsi = (TextView) itemView.findViewById(R.id.textViewDeskripsi);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
